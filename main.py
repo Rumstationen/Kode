@@ -28,7 +28,7 @@ from picamzero import Camera
 # Create an instance of the Camera class
 cam = Camera()
 
-# Capture an image
+# tag billede
 
 cam.take_photo("image1.jpg")
 cam.take_photo("image2.jpg")
