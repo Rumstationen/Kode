@@ -52,12 +52,12 @@ def convert_to_cv(image_1, image_2):# definere convert_to_cv(image_1, image_2)
 def calculate_features(image_1, image_2, feature_number):# definere calculate_features(image_1, image_2, feature_number)
     orb = cv2.ORB_create(nfeatures = feature_number)# sætter feature-punkter på billede
     keypoints_1, descriptors_1 = orb.detectAndCompute(image_1_cv, None)# sætter keypoints_1 og descriptors_1 for image_1_cv
-    keypoints_2, descriptors_2 = orb.detectAndCompute(image_2_cv, None)# sætter keypoints_1 og descriptors_1 for image_1_cv
+    keypoints_2, descriptors_2 = orb.detectAndCompute(image_2_cv, None)# sætter keypoints_2 og descriptors_2 for image_1_cv
     return keypoints_1, keypoints_2, descriptors_1, descriptors_2# slutter funktionen og sætter keypoints_1, keypoints_2, descriptors_1, descriptors_2 ind i programmet
 def calculate_matches(descriptors_1, descriptors_2):# definere calculate_matches(descriptor_1, descriptor_2)
     brute_force = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)# tjek hele lortet en pixel af gangen 
     matches = brute_force.match(descriptors_1, descriptors_2)# sammenlign descriptors_1 og desciptors_2
-    matches = sorted(matches, key=lambda x: x.distance)
+    matches = sorted(matches, key=lambda x: x.distance)# 
     return matches
 
 def display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches):
@@ -136,5 +136,6 @@ output_string = estimate_kmps_formatted
 file_path = "result.txt"  # Replace with your desired file path
 with open(file_path, 'w') as file:
     file.write(output_string)
+
 
 #print("Data written to", file_path)
