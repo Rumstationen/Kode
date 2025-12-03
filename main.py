@@ -164,8 +164,8 @@ speed = calculate_speed_in_kmps(average_feature_distance, 12648, time_difference
 
 estimate_kmps = speed  # Replace with your estimate
 
-# Format the estimate_kmps to have a precision
-# of 5 significant figures
+# gør estimate_kmps mere præcis
+# op til 5 betydende sifre
 estimate_kmps_formatted = "{:.3f}".format(estimate_kmps)
 
 #Lav en streng til at skrive til filen
