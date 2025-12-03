@@ -55,6 +55,7 @@ def get_time(image):
 #str er en bogstavvariabel for streng
         time = datetime.strptime(time_str, '%Y:%m:%d %H:%M:%S')
     return time
+    #Returnere variablen der er lavet som time.
 
 #print(get_time('photo_0683.jpg'))
 
