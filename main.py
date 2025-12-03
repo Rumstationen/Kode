@@ -171,7 +171,7 @@ estimate_kmps_formatted = "{:.3f}".format(estimate_kmps)
 # Create a string to write to the file
 output_string = estimate_kmps_formatted
 #print(output_string)
-# Write to the file
+# skriv til filen
 file_path = "result.txt"  # Replace with your desired file path
 with open(file_path, 'w') as file:
     file.write(output_string)
