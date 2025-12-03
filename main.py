@@ -168,7 +168,7 @@ estimate_kmps = speed  # Replace with your estimate
 # of 5 significant figures
 estimate_kmps_formatted = "{:.3f}".format(estimate_kmps)
 
-# Create a string to write to the file
+#Lav en streng til at skrive til filen
 output_string = estimate_kmps_formatted
 #print(output_string)
 # skriv til filen
