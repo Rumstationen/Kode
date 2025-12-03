@@ -136,13 +136,13 @@ def calculate_speed_in_kmps(feature_distance, GSD, time_difference):
 
 
 
-image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # Create OpenCV image objects
+image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # laver OpenCV billede-objekter
 
-time_difference = get_time_difference(image_1, image_2) # Get time difference between images
-image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # Create OpenCV image objects
-keypoints_1, keypoints_2, descriptors_1, descriptors_2 = calculate_features(image_1_cv, image_2_cv, 1000) # Get keypoints and descriptors
-matches = calculate_matches(descriptors_1, descriptors_2) # Match descriptors
-#display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches) # Display matches
+time_difference = get_time_difference(image_1, image_2) # finder tidsforskel mellem billederne
+image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # laver OpenCV billede-objekter
+keypoints_1, keypoints_2, descriptors_1, descriptors_2 = calculate_features(image_1_cv, image_2_cv, 1000) # få keypoints og descriptors
+matches = calculate_matches(descriptors_1, descriptors_2) # sammenlign descriptors
+#display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches) # vis steder hvor det er det samme
 
 coordinates_1, coordinates_2 = find_matching_coordinates(keypoints_1, keypoints_2, matches)
 average_feature_distance = calculate_mean_distance(coordinates_1, coordinates_2)
